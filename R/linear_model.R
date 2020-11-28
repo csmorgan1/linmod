@@ -25,12 +25,15 @@ linear_model <- function(Y,X){
   if(n != length(Y)){stop(print("Dimensions do not match"))}
   #create hat matrix
   H <- X %*% solve(t(X) %*% X) %*% t(X)
+  #create identity matrix
   I <- diag(1, n, n)
+  #create one matrix
   oneMatrix <- matrix(1, n, n)
   #get beta estimates with OLS
   Betas <- solve(t(X) %*% X) %*% t(X) %*% Y
   SSE <- as.numeric(t(Y) %*% Y - 2 * t(Betas) %*% t(X) %*% Y +
                       t(Betas) %*% t(X) %*% X %*% Betas)
+  #mean square error
   sigma2 <- as.numeric(SSE / (n - q))
   SSY <- as.numeric(t(Y) %*% (I - oneMatrix / n) %*% Y)
   SSR <- as.numeric(t(Y) %*% (H - oneMatrix / n) %*% Y)
