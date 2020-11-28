@@ -1,3 +1,6 @@
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.com/csmorgan1/linmod.svg?branch=master)](https://travis-ci.com/csmorgan1/linmod)
+<!-- badges: end -->
 # linmod
 ## Overview
 
