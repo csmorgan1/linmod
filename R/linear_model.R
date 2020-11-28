@@ -1,3 +1,19 @@
+#' Linear Model
+#'
+#' Calculates coefficient estimates, standard errors, t-statistics, and p-values,
+#' as well as R squared, adjusted R squared, F-Statistic and p-value for model.
+#'
+#' @param Y input outcome
+#' @param X input predictor(s)
+#'
+#' @return estimated effects of X on Y through OLS
+#'
+#' @example linear_model(Y=mtcars$mpg,X=mtcars$hp)
+#'
+#' @importFrom stats pf pt
+#'
+#' @export
+#'
 linear_model <- function(Y,X){
   X <- cbind(1, X)
   n <- dim(X)[[1]]
@@ -7,7 +23,7 @@ linear_model <- function(Y,X){
   I <- diag(1, n, n)
   oneMatrix <- matrix(1, n, n)
   Betas <- solve(t(X) %*% X) %*% t(X) %*% Y
-  SSE <- as.numeric(t(Y) %*% Y - 2 * t(Betas) %*% t(X) %*% Y + 
+  SSE <- as.numeric(t(Y) %*% Y - 2 * t(Betas) %*% t(X) %*% Y +
                       t(Betas) %*% t(X) %*% X %*% Betas)
   sigma2 <- as.numeric(SSE / (n - q))
   SSY <- as.numeric(t(Y) %*% (I - oneMatrix / n) %*% Y)
