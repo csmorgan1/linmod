@@ -14,5 +14,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    bench
+    bench,
+    ggplot,
+    ggbeeswax
 VignetteBuilder: knitr
