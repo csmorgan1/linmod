@@ -8,7 +8,7 @@
 #'
 #' @return estimated effects of X on Y through OLS
 #'
-#' @example linear_model(Y=mtcars$mpg,X=mtcars$hp)
+#' @examples linear_model(Y=mtcars$mpg,X=mtcars$hp)
 #'
 #' @importFrom stats pf pt
 #'
