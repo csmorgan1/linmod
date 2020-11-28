@@ -13,5 +13,5 @@ Learn more about the usage of this function through examples in vignette("linmod
 ## Installation
 
 ```r
-install.packages("liRe")
+install.packages("linmod")
 ```
