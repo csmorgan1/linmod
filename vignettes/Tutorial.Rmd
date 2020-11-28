@@ -22,31 +22,25 @@ library(bench)
 To run a simple linear regression with `linear_model`:
 
 ```{r}
-linear_model(Y=mtcars[,"mpg"],mtcars[,"hp"])
+linear_model(Y = mtcars[ , "mpg"], mtcars[ , "hp"])
 ```
 
 `linear_model` coefficients match those from `lm`:
 
 ```{r}
-all.equal(as.numeric(unlist(lm(mtcars[,"mpg"]~mtcars[,"hp"])[["coefficients"]])),
-          as.numeric(unlist(linear_model(Y=mtcars[,"mpg"],mtcars[,"hp"])[["Estimates"]])))
+all.equal(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[, "hp"])[["coefficients"]])),
+          as.numeric(unlist(linear_model(Y = mtcars[, "mpg"], mtcars[, "hp"])[["Estimates"]])))
 ```
 
 Compare run time of `linear_model` to that of `lm`:
 
 ```{r}
-result <- bench::mark(as.numeric(unlist(lm(mtcars[,"mpg"]~mtcars[,"hp"])[["coefficients"]])),
-                      as.numeric(unlist(linear_model(Y=mtcars[,"mpg"],mtcars[,"hp"])[["Estimates"]])))
+result <- bench::mark(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[,"hp"])[["coefficients"]])),
+                      as.numeric(unlist(linear_model(Y = mtcars[, "mpg"], mtcars[, "hp"])[["Estimates"]])))
 ```
 
 View table of result:
 
 ```{r}
 print(result)
-```
-
-View plot of result:
-
-```{r}
-plot(result)
 ```
