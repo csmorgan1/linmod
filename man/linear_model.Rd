@@ -18,3 +18,7 @@ estimated effects of X on Y through OLS
 Calculates coefficient estimates, standard errors, t-statistics, and p-values,
 as well as R squared, adjusted R squared, F-Statistic and p-value for model.
 }
+\examples{
+linear_model(Y=mtcars$mpg,X=mtcars$hp)
+
+}
