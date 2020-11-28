@@ -15,4 +15,5 @@ Suggests:
     rmarkdown,
     testthat,
     bench,
+    covr
 VignetteBuilder: knitr

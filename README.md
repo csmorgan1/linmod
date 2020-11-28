@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.com/csmorgan1/linmod.svg?branch=master)](https://travis-ci.com/csmorgan1/linmod)
+[![Codecov test coverage](https://codecov.io/gh/csmorgan1/linmod/branch/master/graph/badge.svg)](https://codecov.io/gh/csmorgan1/linmod?branch=master)
 <!-- badges: end -->
 # linmod
 ## Overview
