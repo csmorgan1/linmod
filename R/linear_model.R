@@ -51,8 +51,6 @@ linear_model <- function(Y,X){
   a <- SSE / (n - q)
   b <- SSY / (n - 1)
   R2A <- 1 - a / b
-  #calculate residual standard error
-  RSE <- sqrt(simga2)
   #calculate f stat to test if full model is better than intercept only model
   d <- SSR / (q-1)
   e <- SSE / (n-q)
@@ -60,9 +58,9 @@ linear_model <- function(Y,X){
   #calculate p-value for f statistic
   fPvalue <- pf(fStat,q-1,n-q,lower.tail = F)
   #create list containing all relevant calculations
-  valuesList <- list(Betas,SE,t,x1,R2,R2A,RSE,fStat,fPvalue)
+  valuesList <- list(Betas,SE,t,x1,R2,R2A,fStat,fPvalue)
   #name list elements
   names(valuesList) <- c("Estimates","STD.ERR","T-Stat","P(>|t|)","R-Squared","Adjusted R_Sqaured",
-                         "RSE","F-statistic","F p-value")
+                         "F-statistic","F p-value")
   return(valuesList)
 }
