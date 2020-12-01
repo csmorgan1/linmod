@@ -45,7 +45,7 @@ View table of result:
 print(result)
 ```
 
-Compare summary output of `lm` with output of `linear_model`
+Compare summary output of `lm` with output of `linear_model`:
 
 ```{r}
 summary(lm(mtcars[,"mpg"]~.,data=mtcars[,2:11]))
