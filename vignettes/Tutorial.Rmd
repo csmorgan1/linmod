@@ -22,7 +22,7 @@ library(bench)
 To run a simple linear regression with `linear_model`:
 
 ```{r}
-linear_model(Y = mtcars[ , "mpg"], mtcars[ , "hp"])
+linear_model(Y = mtcars[ , "mpg"], X = mtcars[ , "hp"])
 ```
 
 `linear_model` coefficients match those from `lm`:
@@ -31,7 +31,6 @@ linear_model(Y = mtcars[ , "mpg"], mtcars[ , "hp"])
 all.equal(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[, "hp"])[["coefficients"]])),
           as.numeric(unlist(linear_model(Y = mtcars[, "mpg"], mtcars[, "hp"])[["Estimates"]])))
 ```
-
 
 Compare run time of `linear_model` to that of `lm`:
 
@@ -45,3 +44,14 @@ View table of result:
 ```{r}
 print(result)
 ```
+
+Compare summary output of `lm` with output of `linear_model`
+
+```{r}
+summary(lm(mtcars[,"mpg"]~.,data=mtcars[,2:11]))
+```
+
+```{r}
+linear_model(Y = mtcars[ , "mpg"], X=as.matrix(mtcars[,2:11]))
+```
+
