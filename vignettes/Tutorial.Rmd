@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(linmod)
 library(bench)
+library(kableExtra)
 ```
 
 To run a simple linear regression with `linear_model`:
@@ -42,7 +43,7 @@ result <- bench::mark(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[,"hp"])[["co
 View table of result:
 
 ```{r}
-print(result,n=2)
+print(result,n=Inf)
 ```
 
 Compare summary output of `lm` with output of `linear_model`:
