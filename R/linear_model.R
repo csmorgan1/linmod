@@ -58,9 +58,10 @@ linear_model <- function(Y,X){
   #calculate p-value for f statistic
   fPvalue <- pf(fStat,q-1,n-q,lower.tail = F)
   #create list containing all relevant calculations
-  valuesList <- list(Betas,SE,t,x1,R2,R2A,fStat,fPvalue)
-  #name list elements
-  names(valuesList) <- c("Estimates","STD.ERR","T-Stat","P(>|t|)","R-Squared","Adjusted R_Sqaured",
-                         "F-statistic","F p-value")
+  valuesList1 <- as.data.frame(cbind(Betas,SE,t,x1))
+  valuesList2 <- as.data.frame(cbind(R2,R2A,fStat,fPvalue))
+  colnames(valuesList1) <- c("Estimates","STD.ERR","T-Stat","P(>|t|)")
+  colnames(valuesList2) <- c("R-Squared","Adjusted R_Sqaured","F-statistic","F p-value")
+  valuesList <- list(valuesList1,valuesList2)
   return(valuesList)
 }
