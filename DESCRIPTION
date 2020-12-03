@@ -15,5 +15,6 @@ Suggests:
     rmarkdown,
     testthat,
     bench,
-    covr
+    covr,
+    data.table
 VignetteBuilder: knitr
