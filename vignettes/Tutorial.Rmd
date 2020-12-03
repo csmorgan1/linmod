@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(linmod)
 library(bench)
+library(data.table)
 ```
 
 To run a simple linear regression with `linear_model`:
@@ -35,14 +36,14 @@ all.equal(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[, "hp"])[["coefficients"
 Compare run time of `linear_model` to that of `lm`:
 
 ```{r}
-result <- bench::mark(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[,"hp"])[["coefficients"]])),
-                      as.numeric(linear_model(Y = mtcars[, "mpg"], mtcars[, "hp"])[[1]][["Estimates"]]))
+result <- as.data.table(bench::mark(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcars[,"hp"])[["coefficients"]])),
+                      as.numeric(linear_model(Y = mtcars[, "mpg"], mtcars[, "hp"])[[1]][["Estimates"]])))
 ```
 
 View table of result:
 
 ```{r}
-result
+print(result)
 ```
 
 Compare summary output of `lm` with output of `linear_model`:
