@@ -43,7 +43,7 @@ result <- as.data.table(bench::mark(as.numeric(unlist(lm(mtcars[, "mpg"] ~ mtcar
 View table of result:
 
 ```{r}
-print(result)
+print(result[,1:10])
 ```
 
 Compare summary output of `lm` with output of `linear_model`:
