@@ -17,6 +17,7 @@
 linear_model <- function(Y,X){
   #add intercept to design matrix
   X <- cbind(1, X)
+  X <- as.matrix(X)
   #number of rows
   n <- dim(X)[[1]]
   #number of columns (observations)
