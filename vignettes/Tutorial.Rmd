@@ -53,6 +53,6 @@ summary(lm(mtcars[,"mpg"]~.,data=mtcars[,2:11]))
 ```
 
 ```{r}
-linear_model(Y = mtcars[ , "mpg"], X=as.matrix(mtcars[,2:11]))
+linear_model(Y = mtcars[ , "mpg"], X=mtcars[,2:11])
 ```
 

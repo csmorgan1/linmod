@@ -20,5 +20,6 @@ as well as R squared, adjusted R squared, F-Statistic and p-value for model.
 }
 \examples{
 linear_model(Y=mtcars$mpg,X=mtcars$hp)
+linear_model(Y=mtcars[,"mpg"],X=mtcars[,2:11])
 
 }
