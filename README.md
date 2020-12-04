@@ -8,7 +8,7 @@
 linmod is a linear regression package
   - linear_model() is a function that produces a linear model given a response variable (Y) and predictor variable(s) (X).
   
-Learn more about the usage of this function through examples in vignette("linmod")
+Learn more about the usage of this function through examples in vignette("Tutorial", package = "linmod")
   
 ## Installation
 
