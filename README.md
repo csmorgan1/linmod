@@ -15,8 +15,6 @@ Learn more about the usage of this function through examples in vignette("linmod
 ```r
 install.packages("linmod")
 ```
-## Usage
-
 ```r
 library(linmod)
 ```
