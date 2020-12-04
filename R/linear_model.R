@@ -9,6 +9,7 @@
 #' @return estimated effects of X on Y through OLS
 #'
 #' @examples linear_model(Y=mtcars$mpg,X=mtcars$hp)
+#' linear_model(Y=mtcars[,"mpg"],X=mtcars[,2:11])
 #'
 #' @importFrom stats pf pt
 #'
